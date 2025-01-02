@@ -28,7 +28,10 @@ Then you can **run the local server**:
 bun dev
 ```
 
-Then **open your browser** at https://localhost:5173/
+Then **open your browser** at <https://localhost:5173/>
+
+## Creating a Storyblok space
+To create a Storyblok space, and get the proper access token you can read this tutorial: <https://dev.to/robertobutti/how-to-set-up-a-storyblok-space-with-the-community-plan-for-local-development-1i37>
 
 
 ## Building
