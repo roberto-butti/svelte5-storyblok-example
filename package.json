@@ -25,6 +25,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@storyblok/svelte": "../storyblok-svelte/lib"
+    "@storyblok/svelte": "^4.0.10"
   }
 }
