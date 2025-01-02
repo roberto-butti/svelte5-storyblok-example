@@ -1,38 +1,44 @@
-# sv
+# Svelte 5 and Storyblok example
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Hi Folks 👋
+This repository contains a simple example of a SvelteKit (with Svelte 5) project integrated with Storyblok and the Storyblok Visual Editor.
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Creating your SvelteKit project
 
-```bash
-# create a new project in the current directory
-npx sv create
+**Clone the repository**:
 
-# create a new project in my-app
-npx sv create my-app
+```shell
+git clone https://github.com/roberto-butti/svelte5-storyblok-example.git
 ```
 
-## Developing
+Then **create the `.env` file** with these two parameters:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```ini
+PUBLIC_ACCESS_TOKEN=youraccesstoken
+PUBLIC_REGION=eu
 ```
+You can **create your Storyblok space** and pick the **Preview Access Token**.
+
+Then you can **install all the SvelteKit dependencies** via `bun install` (or `npm install` or `pnpm install` or `yarn`)
+
+Then you can **run the local server**:
+
+```shell
+bun dev
+```
+
+Then **open your browser** at https://localhost:5173/
+
 
 ## Building
 
-To create a production version of your app:
+To create a production version of your SvelteKit project:
 
 ```bash
-npm run build
+bun build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+> You may need to install an adapter for your target environment to deploy your app.
