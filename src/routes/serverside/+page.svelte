@@ -4,7 +4,7 @@
   import type { PageData } from './$types';
   import { useStoryblok } from '$lib/storyblok';
 
-  let { data }: { data: PageData } = $props();
+  const { data }: { data: PageData } = $props();
 
   let story = $state(data.story);
   let loaded = $state(false);

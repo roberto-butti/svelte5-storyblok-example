@@ -4,7 +4,7 @@
 
   import type { PageData } from './$types';
   let hint = $state('');
-  let { data }: { data: PageData } = $props();
+  const { data }: { data: PageData } = $props();
   onMount(async () => {
     if (!PUBLIC_ACCESS_TOKEN) {
       hint = 'Create a `.env` file and set the PUBLIC_ACCESS_TOKEN key';

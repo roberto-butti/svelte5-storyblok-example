@@ -1,7 +1,7 @@
 <script lang="ts">
   import { storyblokEditable, StoryblokComponent } from '@storyblok/svelte';
 
-  let { blok } = $props();
+  const { blok } = $props();
 </script>
 
 <div use:storyblokEditable={blok} class="container">

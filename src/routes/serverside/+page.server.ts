@@ -6,7 +6,7 @@ export const prerender = true;
 export async function load() {
   await useStoryblok();
 
-  let storyblokApi = await useStoryblokApi();
+  const storyblokApi = await useStoryblokApi();
 
   return storyblokApi
     .get('cdn/stories/home', {

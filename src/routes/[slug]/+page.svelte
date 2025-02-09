@@ -4,11 +4,11 @@
   import type { PageData } from './$types';
   import { useStoryblok } from '$lib/storyblok';
 
-  let { data }: { data: PageData } = $props();
+  const { data }: { data: PageData } = $props();
 
-  let story = $state(data.story);
+  const story = $state(data.story);
   let loaded = $state(false);
-  let datetime = new Date();
+  const datetime = new Date();
 
   onMount(async () => {
     await useStoryblok();

@@ -4,9 +4,9 @@ export const prerender = true;
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
-  let slug = params.slug ?? 'home';
+  const slug = params.slug ?? 'home';
   await useStoryblok();
-  let storyblokApi = await useStoryblokApi();
+  const storyblokApi = await useStoryblokApi();
 
   return storyblokApi
     .get(`cdn/stories/${slug}`, {
