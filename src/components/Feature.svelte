@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { storyblokEditable } from '@storyblok/svelte';
+import { storyblokEditable } from "@storyblok/svelte";
 
-  const { blok } = $props();
-  const datetime = new Date();
+const { blok } = $props();
+const datetime = new Date();
 </script>
 
 <article use:storyblokEditable={blok}>

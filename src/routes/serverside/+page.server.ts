@@ -1,6 +1,6 @@
+import { useStoryblok } from "$lib/storyblok";
 // @ts-nocheck
-import { useStoryblokApi } from '@storyblok/svelte';
-import { useStoryblok } from '$lib/storyblok';
+import { useStoryblokApi } from "@storyblok/svelte";
 export const prerender = true;
 /** @type {import('./$types').PageLoad} */
 export async function load() {
@@ -9,19 +9,19 @@ export async function load() {
   const storyblokApi = await useStoryblokApi();
 
   return storyblokApi
-    .get('cdn/stories/home', {
-      version: 'draft'
+    .get("cdn/stories/home", {
+      version: "draft",
     })
     .then((dataStory) => {
       return {
         story: dataStory.data.story,
-        error: false
+        error: false,
       };
     })
     .catch((error) => {
       return {
         story: {},
-        error: error
+        error: error,
       };
     });
 }

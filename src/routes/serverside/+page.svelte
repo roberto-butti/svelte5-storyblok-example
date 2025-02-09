@@ -1,24 +1,30 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { useStoryblokBridge, StoryblokComponent } from '@storyblok/svelte';
-  import type { PageData } from './$types';
-  import { useStoryblok } from '$lib/storyblok';
+import { useStoryblok } from "$lib/storyblok";
+import { StoryblokComponent, useStoryblokBridge } from "@storyblok/svelte";
+import { onMount } from "svelte";
+import type { PageData } from "./$types";
 
-  const { data }: { data: PageData } = $props();
+const { data }: { data: PageData } = $props();
 
-  let story = $state(data.story);
-  let loaded = $state(false);
+let story = $state(data.story);
+let loaded = $state(false);
 
-  onMount(async () => {
-    await useStoryblok();
-    loaded = true;
-    if (story) {
-      useStoryblokBridge(data.story.id, (newStory) => (story = newStory), {
+onMount(async () => {
+  await useStoryblok();
+  loaded = true;
+  if (story) {
+    useStoryblokBridge(
+      data.story.id,
+      (newStory) => {
+        story = newStory;
+      },
+      {
         // resolveRelations: ["popular-articles.articles"],
-        preventClicks: true
-      });
-    }
-  });
+        preventClicks: true,
+      },
+    );
+  }
+});
 </script>
 
 <div>

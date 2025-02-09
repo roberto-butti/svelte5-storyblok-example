@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { PUBLIC_ACCESS_TOKEN } from '$env/static/public';
-  import { onMount } from 'svelte';
+import { PUBLIC_ACCESS_TOKEN } from "$env/static/public";
+import { onMount } from "svelte";
 
-  import type { PageData } from './$types';
-  let hint = $state('');
-  const { data }: { data: PageData } = $props();
-  onMount(async () => {
-    if (!PUBLIC_ACCESS_TOKEN) {
-      hint = 'Create a `.env` file and set the PUBLIC_ACCESS_TOKEN key';
-    }
-  });
+import type { PageData } from "./$types";
+let hint = $state("");
+const { data }: { data: PageData } = $props();
+onMount(async () => {
+  if (!PUBLIC_ACCESS_TOKEN) {
+    hint = "Create a `.env` file and set the PUBLIC_ACCESS_TOKEN key";
+  }
+});
 </script>
 
 <main class="container">

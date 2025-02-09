@@ -1,5 +1,5 @@
-import { useStoryblokApi } from '@storyblok/svelte';
-import { useStoryblok } from '$lib/storyblok';
+import { useStoryblok } from "$lib/storyblok";
+import { useStoryblokApi } from "@storyblok/svelte";
 export const prerender = true;
 
 /** @type {import('./$types').PageLoad} */
@@ -8,17 +8,17 @@ export async function load() {
   const storyblokApi = await useStoryblokApi();
 
   return storyblokApi
-    .get(`cdn/spaces/me`)
+    .get("cdn/spaces/me")
     .then((dataSpace) => {
       return {
         space: dataSpace.data.space,
-        error: false
+        error: false,
       };
     })
     .catch((error) => {
       return {
         space: {},
-        error: error
+        error: error,
       };
     });
 }
