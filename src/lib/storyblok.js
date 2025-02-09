@@ -8,6 +8,7 @@ export async function useStoryblok(accessToken = '') {
   storyblokInit({
     accessToken: accessToken,
     use: [apiPlugin],
+    bridge: true,
     components: {
       feature: (await import('$lib/../components/Feature.svelte')).default,
       grid: (await import('$lib/../components/Grid.svelte')).default,

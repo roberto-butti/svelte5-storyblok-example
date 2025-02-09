@@ -3,7 +3,6 @@
 Hi Folks 👋
 This repository contains a simple example of a SvelteKit (with Svelte 5) project integrated with Storyblok and the Storyblok Visual Editor.
 
-
 ## Creating your SvelteKit project
 
 **Clone the repository**:
@@ -18,6 +17,7 @@ Then **create the `.env` file** with these two parameters:
 PUBLIC_ACCESS_TOKEN=youraccesstoken
 PUBLIC_REGION=eu
 ```
+
 You can **create your Storyblok space** and pick the **Preview Access Token**.
 
 Then you can **install all the SvelteKit dependencies** via `bun install` (or `npm install` or `pnpm install` or `yarn`)
@@ -31,8 +31,8 @@ bun dev
 Then **open your browser** at <https://localhost:5173/>
 
 ## Creating a Storyblok space
-To create a Storyblok space, and get the proper access token you can read this tutorial: <https://dev.to/robertobutti/how-to-set-up-a-storyblok-space-with-the-community-plan-for-local-development-1i37>
 
+To create a Storyblok space, and get the proper access token you can read this tutorial: <https://dev.to/robertobutti/how-to-set-up-a-storyblok-space-with-the-community-plan-for-local-development-1i37>
 
 ## Building
 

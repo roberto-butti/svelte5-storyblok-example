@@ -1,26 +1,23 @@
-// @ts-nocheck
 import { useStoryblokApi } from '@storyblok/svelte';
 import { useStoryblok } from '$lib/storyblok';
 export const prerender = true;
+
 /** @type {import('./$types').PageLoad} */
 export async function load() {
   await useStoryblok();
-
   let storyblokApi = await useStoryblokApi();
 
   return storyblokApi
-    .get('cdn/stories/home', {
-      version: 'draft'
-    })
-    .then((dataStory) => {
+    .get(`cdn/spaces/me`)
+    .then((dataSpace) => {
       return {
-        story: dataStory.data.story,
+        space: dataSpace.data.space,
         error: false
       };
     })
     .catch((error) => {
       return {
-        story: {},
+        space: {},
         error: error
       };
     });

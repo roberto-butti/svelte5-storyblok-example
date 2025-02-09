@@ -8,28 +8,34 @@
 
   let story = $state(data.story);
   let loaded = $state(false);
+  let datetime = new Date();
 
   onMount(async () => {
     await useStoryblok();
     loaded = true;
-    //if (story) {
-    useStoryblokBridge(data.story.id, (newStory) => (story = newStory), {
+
+    useStoryblokBridge(data.story.id, (newStory) => (story.content = newStory.content), {
       // resolveRelations: ["popular-articles.articles"],
       preventClicks: true,
       resolveLinks: 'url'
     });
-    //}
+
   });
 </script>
 
 <div>
-  {#key story}
+
     {#if data.error}
       ERROR {data.error.message}
     {/if}
 
-    {#if loaded && story && story.content}
+    {#if ! loaded }
+    <div>Loading...</div>
+    {:else if story && story.content}
       <StoryblokComponent blok={story.content} />
+    {:else}
+    <div>Getting Story</div>
     {/if}
-  {/key}
+
+
 </div>

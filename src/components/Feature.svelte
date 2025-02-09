@@ -2,6 +2,7 @@
   import { storyblokEditable } from '@storyblok/svelte';
 
   let { blok } = $props();
+  let datetime = new Date();
 </script>
 
 <article use:storyblokEditable={blok}>
@@ -11,4 +12,5 @@
     </figure>
   {/if}
   {blok.name}
+  <p>{ datetime }</p>
 </article>
