@@ -1,12 +1,17 @@
-import { PUBLIC_ACCESS_TOKEN, PUBLIC_REGION } from "$env/static/public";
 // @ts-nocheck
+// 001 - Import Access token and region from env variables
+import { PUBLIC_ACCESS_TOKEN, PUBLIC_REGION } from "$env/static/public";
 import { apiPlugin, storyblokInit } from "@storyblok/svelte";
 
 export async function useStoryblok(accessToken = "") {
+  // 002 - Calling the storyblokInit from storyblok/svelte package
   storyblokInit({
+    // 003 - Loading and using the access token
     accessToken: accessToken === "" ? PUBLIC_ACCESS_TOKEN : accessToken,
+    // 004 -  // use apiPlugin provided by Storyblok SDK
     use: [apiPlugin],
     bridge: true,
+    // 005 - List components
     components: {
       feature: (await import("$lib/../components/Feature.svelte")).default,
       grid: (await import("$lib/../components/Grid.svelte")).default,

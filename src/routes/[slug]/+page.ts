@@ -1,3 +1,4 @@
+import { PUBLIC_VERSION } from "$env/static/public";
 import { useStoryblok } from "$lib/storyblok";
 import { useStoryblokApi } from "@storyblok/svelte";
 export const prerender = true;
@@ -10,7 +11,7 @@ export async function load({ params }) {
 
   return storyblokApi
     .get(`cdn/stories/${slug}`, {
-      version: "draft",
+      version: PUBLIC_VERSION ?? "published",
     })
     .then((dataStory) => {
       return {
