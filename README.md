@@ -36,7 +36,7 @@ Then you can **install all the SvelteKit dependencies** via `bun install` (or `n
 Then you can **run the local server**:
 
 ```shell
-bun dev
+bun run dev
 ```
 
 Then **open your browser** at <https://localhost:5173/>
@@ -50,7 +50,7 @@ To create a Storyblok space, and get the proper access token you can read this t
 To create a production version of your SvelteKit project:
 
 ```bash
-bun build
+bun run build
 ```
 
 You can preview the production build with `bun preview`.
